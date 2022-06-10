@@ -1,0 +1,25 @@
+server:
+  port: 8006
+
+spring:
+  application:
+    name: cloud-provider-payment
+  datasource:
+    druid:
+      username: root
+      password: superstar666
+      url: jdbc:mysql://43.138.165.56:3306/cloud?useUnicode=true&characterEncoding=utf-8&useSSL=false
+      driver-class-name: com.mysql.jdbc.Driver
+  cloud:
+    consul:
+      host: 43.138.165.56
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+        heartbeat:
+          enabled: true
+
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  type-aliases-package: com.yang.springcloud.entities    # 所有Entity别名类所在包

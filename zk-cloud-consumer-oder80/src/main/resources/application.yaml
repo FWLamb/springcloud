@@ -1,0 +1,17 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: cloud-consumer-order
+  datasource:
+    druid:
+      username: root
+      password: superstar666
+      url: jdbc:mysql://43.138.165.56:3306/cloud?useUnicode=true&characterEncoding=utf-8&useSSL=false
+      driver-class-name: com.mysql.jdbc.Driver
+  cloud:
+    zookeeper:
+      connect-string: 43.138.165.56:2181
+
+
