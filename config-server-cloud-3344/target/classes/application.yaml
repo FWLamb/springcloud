@@ -8,11 +8,12 @@ spring:
     config:
       server:
         git:
-#          uri: git@github.com:FWLamb/springcloud-config.git #GitHub上面的git仓库名字
+          #          uri: git@github.com:FWLamb/springcloud-config.git #GitHub上面的git仓库名字
           uri: https://github.com/FWLamb/springcloud-config.git
           ####搜索目录
           search-paths:
             - springcloud-config
+          force-pull: true
 
       ####读取分支
       label: main
@@ -37,3 +38,7 @@ eureka:
 #        include: 'bus-refresh'
 
 
+logging:
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'DEBUG'
